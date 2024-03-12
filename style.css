@@ -1,0 +1,418 @@
+@import url('https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+    /* Neutral */
+    --Almost-White: #fafafa;
+    --Medium-Gray: #696969;
+    --Almost-Black: #141414;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-size: 18px;
+    font-family: "Epilogue", sans-serif;
+    min-width: 1440px;
+    max-width: 100%;
+    min-height: 100vh;
+    background-color: var(--Almost-White);
+}
+figure, img {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+
+.container {
+    display: flex;
+    justify-content: center;
+    max-width: 100%;
+    padding: 20px;
+    max-height: 100vh;
+}
+
+header {
+    padding: 20px;
+}
+.nav-mob {
+    display: none;
+}
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.nav-logo {
+    display: flex;
+    align-items: center;
+}
+.nav-logo figure {
+    padding-right: 50px;
+}
+.nav-logo ul {
+    display: flex;
+    list-style-type: none;
+    gap: 25px;
+    color: var(--Medium-Gray);
+    font-size: 16px;
+}
+.nav-logo ul li:hover, .log a:hover {
+    cursor: pointer;
+    transition: .2s;
+    color: var(--Almost-Black);
+}
+.feat, .comp {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.log {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+.log a {
+    text-decoration: none;
+    font-size: 14px;
+    color: var(--Medium-Gray);
+    font-weight: 500;
+}
+.log button, .left-side button {
+    border: 2px solid var(--Medium-Gray);
+    padding: 10px 20px;
+    background: none;
+    border-radius: 15px;
+    color: var(--Medium-Gray);
+    font-weight: 700;
+}
+.log button:hover, .left-side button:hover {
+    border: 2px solid var(--Almost-Black);
+    color: var(--Almost-Black);
+    cursor: pointer;
+    transition: .2s;
+    background: none;
+}
+
+
+.left-side, .right-side {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 auto;
+}
+.left-side {
+    align-items: center;
+    height: 500px;
+    justify-content: space-between;
+    padding: 50px 0;
+    gap: 75px;
+}
+.text-btn {
+    padding-left: 60px;
+}
+.left-side h1 {
+    font-size: 82px;
+    max-width: 550px;
+}
+.left-side p {
+    max-width: 60%;
+    color: var(--Medium-Gray);
+    line-height: 25px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    font-weight: 500;
+}
+.left-side button {
+    width: 15%;
+    padding: 10px 0;
+    background-color: var(--Almost-Black);
+    border: 2px solid var(--Almost-Black);
+    color: var(--Almost-White);
+}
+.logos {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+}
+.logos figure {
+    width: auto;
+}
+.right-side {
+    background-image: url(images/image-hero-desktop.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position:center;
+}
+.feat-menu, .comp-menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--Almost-White);
+    box-shadow: 0 0 15px #14141420;
+    position: absolute;
+    top: 65px;
+    left: 100px;
+    border-radius: 10px;
+    width: 150px;
+    height: 150px;
+    visibility: hidden;
+}
+.feat-menu ul, .comp-menu ul {
+    flex-direction: column;
+    gap: 10px;
+    font-weight: 500;
+    font-size: 13px;
+}
+.toDo::before {
+    content: url(images/icon-todo.svg);
+    padding-right: 13px;
+    vertical-align: -2.5px;
+}
+.cal::before {
+    content: url(images/icon-calendar.svg);
+    padding-right: 12px;
+    vertical-align: -2.5px;
+}
+.rem::before {
+    content: url(images/icon-reminders.svg);
+    padding-right: 15px;
+    vertical-align: -2.5px;
+}
+.plan::before {
+    content: url(images/icon-planning.svg);
+    padding-right: 13px;
+    vertical-align: -2.5px;
+}
+.comp-menu {
+    left: 275px;
+    width: 100px;
+    height: 110px;
+}
+.comp-menu ul {
+    gap: 15px;
+    padding: 10px 0;
+}
+
+.feat-menu.active {
+    visibility: visible;
+}
+.comp-menu.active {
+    visibility: visible;
+}
+.fa-angle-down.up {
+    rotate: 180deg;
+}
+
+.menu-bar {
+    display: none;
+}
+
+.attribution { font-size: 12px; text-align: center; margin-top: 50px;}
+.attribution a { color: var(--Medium-Gray); }
+
+/* Responsiveness */
+
+/* Smaller Laptops & Tablets */
+@media screen and (min-width: 900px) and (max-width: 1439px) {
+    body {
+        min-width: 900px;
+        max-width: 1439px;
+    }
+}
+@media screen and (min-width: 750px) and (max-width: 900px) {
+    body {
+        min-width: 750px;
+        max-width: 900px;
+    }
+    header {
+        padding: 20px 40px;
+    }
+    .container {
+        display: flex;;
+        padding: 40px;
+        gap: 100px  ;
+    }
+    .left-side h1 {
+        font-size: 45px;
+        max-width: auto;
+    }
+    .left-side p {
+        max-width: 500px;
+    }
+    .left-side button {
+        width: 30%;
+    }
+    .logos figure {
+        width: 100%;
+    }
+    .logos figure img {
+        height: 50%;
+    }
+    .left-side {
+        align-items: center;
+        height: 750px;
+        justify-content: center;
+        padding: 100px 0;
+        gap: 50px;
+    }
+    .text-btn {
+        padding: 0;
+    }
+}
+
+/* Smaller Screens */
+@media screen and (min-width: 300px) and (max-width: 750px) {
+    body {
+        min-width: 300px;
+        max-width: 900px;
+        font-size: 16px;
+    }
+    header {
+        padding: 15px;
+    }
+    .nav-logo ul, .log, .feat-menu, .comp-menu, .feat, .comp {
+       display: none;
+    }
+    .container {
+        flex-direction: column-reverse;
+        padding: 0;
+    }
+    .right-side, .left-side {
+        width: 100%;
+        height: 100%;
+    }
+    .menu-bar {
+        display: flex;
+        scale: 1.5;
+        z-index: 1;
+    }
+    .text-btn {
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        justify-content: center;
+    }
+    .left-side {
+        padding: 30px 20px;
+    }
+    .left-side h1 {
+        font-size: 36px;
+        max-width: 100%;
+    }
+    .left-side p {
+        max-width: 100%;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        font-weight: 500;
+    }
+    .left-side button {
+        width: 35%;
+    }
+    .right-side {
+        background-image: url(images/image-hero-mobile.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+        width: 100%;
+        height: 450px;
+    } 
+    .nav-mob {
+        min-height: 100vh;
+        position: absolute;
+        background-color: #fafafa;
+        width: 55%;
+        right: 0;
+        top: 0;
+        padding-top: 50px;
+        display: flex;
+        flex-direction: column;
+        color: var(--Medium-Gray);
+        visibility: hidden;
+    }
+    .log-mob {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        margin-top: 30px;
+    }
+    .log-mob a {
+        text-decoration: none;
+        font-size: 13px;
+        color: var(--Medium-Gray);
+    }
+    .log-mob button {
+        width: 80%;
+        border: 2px solid var(--Medium-Gray);
+        padding: 10px 20px;
+        background: none;
+        border-radius: 15px;
+        color: var(--Medium-Gray);
+        font-weight: 700;
+    }
+    .log-mob button:hover {
+        border: 2px solid var(--Almost-Black);
+        color: var(--Almost-Black);
+        cursor: pointer;
+        transition: .2s;
+        background: none;
+    }
+    .feat-menu-mob, .comp-menu-mob {
+        margin-left: 25px;
+        margin-top: 15px;
+        margin-bottom: 15px;
+        display: none;
+    }
+    .feat-menu-mob.active, .comp-menu-mob.active {
+        display: flex;
+    }
+    .nav-mob ul li:hover, .log-mob a:hover {
+        cursor: pointer;
+        transition: .2s;
+        color: var(--Almost-Black);
+    }
+    .nav-mob ul {
+        list-style-type: none;
+        padding-left: 15px;
+    }
+    .nav-mob ul li {
+        padding-bottom: 10px;
+    }
+    .fa-x {
+        position: absolute;
+        top: 20px;
+        right: 15px;
+        scale: 1.5;
+        visibility: hidden;
+    }
+    .fa-x:hover {
+        color: var(--Almost-Black);
+        cursor: pointer;
+    }
+    .nav-mob.active {
+        visibility: visible;
+    }
+    .nav-mob.active .fa-x {
+        visibility: visible;
+    }
+    .nav-mob .menu-bar {
+        position: absolute;
+        top: 20px;
+        right: 15px;
+        scale: 1.5;
+        display: flex;
+        visibility: visible;
+    }
+    .nav-mob.active .menu-bar {
+        visibility: hidden;
+    }
+}
